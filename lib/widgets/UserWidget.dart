@@ -1,22 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:randomuser_project/models/User.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 
 class UserWidget extends StatelessWidget {
-  final User user;
-  UserWidget({Key? key, required this.user}) : super(key: key);
+  final Map user;
+  UserWidget({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Column(
-      children: [
-        const Text('User Widget'),
-        Image.network(user.imageUrl),
-        Text(user.firstName),
-        Text(user.lastName),
-        Text(user.email),
-      ],
-      mainAxisAlignment: MainAxisAlignment.center,
-    ));
+    return Scaffold(
+      appBar: AppBar(),
+      body: Container(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 50,
+                backgroundImage: NetworkImage(user["picture"]["medium"]),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(user["name"]["first"] + " " + user["name"]["last"])
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

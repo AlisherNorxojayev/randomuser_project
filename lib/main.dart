@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:randomuser_project/screens/homeScreen.dart';
+import 'package:randomuser_project/screens/HomeScreen.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: HomeScreen(),
+    debugShowCheckedModeBanner: false,
+    home: HomeScreen()
   ));
 }
