@@ -15,17 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("AppBar"),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomeScreen(),
-                    ));
-              },
-              icon: Icon(Icons.refresh))
-        ],
+        actions: [IconButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),));}, icon: Icon(Icons.refresh))],
       ),
       body: FutureBuilder<List>(
         future: getData(),

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Map<String, dynamic> queryParam = {'results': '10'};
+Map<String, dynamic> queryParam = {'results': '20'};
 Uri url = Uri(
     scheme: 'https',
     host: 'randomuser.me',
